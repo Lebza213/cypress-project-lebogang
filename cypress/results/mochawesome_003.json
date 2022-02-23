@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-02-10T21:18:29.617Z",
+    "end": "2022-02-10T21:18:42.113Z",
+    "duration": 12496,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "676420cf-9d98-4554-817a-b28a8b99929c",
+      "title": "",
+      "fullFile": "cypress/integration/Task-02/test-Web.spec.js",
+      "file": "cypress/integration/Task-02/test-Web.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "db760656-70d4-44cd-b617-a70dd7997417",
+          "title": "Task 2 - Web: Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Table Validations:",
+              "fullTitle": "Task 2 - Web: Test Table Validations:",
+              "timedOut": null,
+              "duration": 2721,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Validate that you are on the User List Table\ncy.url().should('eq', 'https://www.way2automation.com/angularjs-protractor/webtables/'); //Validate Webtables URL\ncy.get(':nth-child(1) > .header-content').should(\"contain\", \"First Name\"); //First Name column header assertion\ncy.get(':nth-child(2) > .header-content').should(\"contain\", \"Last Name\"); //Last Name column header assertion\ncy.get(':nth-child(3) > .header-content').should(\"contain\", \"User Name\"); //User Name column header assertion\ncy.get(':nth-child(5) > .header-content').should(\"contain\", \"Customer\"); //Customer Type column header assertion\ncy.get(':nth-child(6) > .header-content').should(\"contain\", \"Role\"); //Role column header assertion\ncy.get(':nth-child(7) > .header-content').should(\"contain\", \"E-mail\"); //E-Mail column header assertion\ncy.get(':nth-child(8) > .header-content').should(\"contain\", \"Cell Phone\"); //Cell Phone column header assertion\ncy.get(':nth-child(9) > .header-content').should(\"contain\", \"Locked\"); //Locked Status column header assertion",
+              "err": {},
+              "uuid": "f86afdf4-5252-4c9f-9954-df06ec83fc56",
+              "parentUUID": "db760656-70d4-44cd-b617-a70dd7997417",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "User Validations:",
+              "fullTitle": "Task 2 - Web: Test User Validations:",
+              "timedOut": null,
+              "duration": 4864,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Enter User 1 details\ncy.get('thead > :nth-child(2) > td > .btn').click();\ncy.get(':nth-child(1) > :nth-child(2) > .ng-pristine').clear().type(testData.firstName1);\ncy.get('tbody > :nth-child(2) > :nth-child(2) > .ng-pristine').clear().type(testData.lastName1);\ncy.get(':nth-child(3) > :nth-child(2) > .ng-pristine').clear().type(testData.userName1);\ncy.get('tbody > :nth-child(4) > :nth-child(2) > .ng-pristine').clear().type(testData.password1);\ncy.get(':nth-child(5) > :nth-child(2) > :nth-child(1)').click(); //Select Customer Type\ncy.get(':nth-child(6) > :nth-child(2) > .ng-pristine').select(testData.roleAdmin); //Choose Role\ncy.get(':nth-child(7) > :nth-child(2) > .ng-pristine').clear().type(testData.email1);\ncy.get(':nth-child(8) > :nth-child(2) > .ng-pristine').clear().type(testData.cellPhone1);\ncy.get('.btn-success').click(); // Add same user twice to show User Name validations\ncy.get('thead > :nth-child(2) > td > .btn').click();\ncy.get(':nth-child(1) > :nth-child(2) > .ng-pristine').clear().type(testData.firstName1);\ncy.get('tbody > :nth-child(2) > :nth-child(2) > .ng-pristine').clear().type(testData.lastName1);\ncy.get(':nth-child(3) > :nth-child(2) > .ng-pristine').clear().type(testData.userName1);\ncy.get('tbody > :nth-child(4) > :nth-child(2) > .ng-pristine').clear().type(testData.password1);\ncy.get(':nth-child(5) > :nth-child(2) > :nth-child(1)').click(); //Select Customer Type\ncy.get(':nth-child(6) > :nth-child(2) > .ng-pristine').select(testData.roleAdmin); //Choose Role\ncy.get(':nth-child(7) > :nth-child(2) > .ng-pristine').clear().type(testData.email1);\ncy.get(':nth-child(8) > :nth-child(2) > .ng-pristine').clear().type(testData.cellPhone1);\ncy.get('.btn-success').click();",
+              "err": {},
+              "uuid": "e93b95a7-0c07-464e-9ebb-828fd9033d3a",
+              "parentUUID": "db760656-70d4-44cd-b617-a70dd7997417",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Add User:",
+              "fullTitle": "Task 2 - Web: Test Add User:",
+              "timedOut": null,
+              "duration": 4861,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Validate that users can successfully click on \"Add User\"\ncy.get('thead > :nth-child(2) > td > .btn').click(); //Click on Add User\ncy.get('thead > :nth-child(2) > td > .btn').should(\"contain\", \"Add User\"); //Add User pop-up assertion\n// Enter User 1 details\ncy.get(':nth-child(1) > :nth-child(2) > .ng-pristine').clear().type(testData.firstName1);\ncy.get('tbody > :nth-child(2) > :nth-child(2) > .ng-pristine').clear().type(testData.lastName1);\ncy.get(':nth-child(3) > :nth-child(2) > .ng-pristine').clear().type(testData.userName1);\ncy.get('tbody > :nth-child(4) > :nth-child(2) > .ng-pristine').clear().type(testData.password1);\ncy.get(':nth-child(5) > :nth-child(2) > :nth-child(1)').click(); //Select Customer Type\ncy.get(':nth-child(6) > :nth-child(2) > .ng-pristine').select(testData.roleAdmin); //Choose Role\ncy.get(':nth-child(7) > :nth-child(2) > .ng-pristine').clear().type(testData.email1);\ncy.get(':nth-child(8) > :nth-child(2) > .ng-pristine').clear().type(testData.cellPhone1);\ncy.get('.btn-success').click(); // Enter User 2 details\ncy.get('thead > :nth-child(2) > td > .btn').click(); //Click on add user to add User2\ncy.get(':nth-child(1) > :nth-child(2) > .ng-pristine').clear().type(testData.firstName2);\ncy.get('tbody > :nth-child(2) > :nth-child(2) > .ng-pristine').clear().type(testData.lastName2);\ncy.get(':nth-child(3) > :nth-child(2) > .ng-pristine').clear().type(testData.userName2);\ncy.get('tbody > :nth-child(4) > :nth-child(2) > .ng-pristine').clear().type(testData.password2);\ncy.get(':nth-child(5) > :nth-child(2) > :nth-child(2)').click(); //Select Customer Type\ncy.get(':nth-child(6) > :nth-child(2) > .ng-pristine').select(testData.roleCustomer); //Choose Role\ncy.get(':nth-child(7) > :nth-child(2) > .ng-pristine').clear().type(testData.email2);\ncy.get(':nth-child(8) > :nth-child(2) > .ng-pristine').clear().type(testData.cellPhone2);\ncy.get('.btn-success').click(); // Confirm that users are added\ncy.get('tbody > :nth-child(2) > :nth-child(1)').should(\"contain\", testData.firstName1);\ncy.get('tbody > :nth-child(1) > :nth-child(1)').should(\"contain\", testData.firstName2);\ncy.get('tbody > :nth-child(2) > :nth-child(3)').should(\"contain\", testData.userName1);\ncy.get('tbody > :nth-child(1) > :nth-child(3)').should(\"contain\", testData.userName2);",
+              "err": {},
+              "uuid": "1e6db3a6-2283-4020-ae15-6a95111e4c34",
+              "parentUUID": "db760656-70d4-44cd-b617-a70dd7997417",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f86afdf4-5252-4c9f-9954-df06ec83fc56",
+            "e93b95a7-0c07-464e-9ebb-828fd9033d3a",
+            "1e6db3a6-2283-4020-ae15-6a95111e4c34"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 12446,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}
