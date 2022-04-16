@@ -7,6 +7,7 @@
     "viewportWidth": 1280,
     "baseUrl": "https://www.way2automation.com/angularjs-protractor/webtables/",
     "watchForFileChanges": false,
+    "ignoreTestFiles": [ "**/webStepDef.spec.js*" ],
     "video": true,
     "reporter": "mochawesome",
     "reporterOptions": {
